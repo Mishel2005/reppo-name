@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Мороженого</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Магазин Мороженого</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#" id="cart-button">Корзина (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Свежие и вкусные мороженое каждый день!</h2>
+        <button onclick="scrollToSection('menu')">Посмотреть меню</button>
+    </section>
+
+    <!-- Слайдер -->
+    <section id="slider">
+        <div class="slides">
+            <img src="images/slide1.jpg" alt="Слайд 1">
+            <img src="images/slide2.jpg" alt="Слайд 2">
+            <img src="images/slide3.jpg" alt="Слайд 3">
+        </div>
+        <div class="slider-controls">
+            <span class="prev" onclick="prevSlide()">&#10094;</span>
+            <span class="next" onclick="nextSlide()">&#10095;</span>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Наше Меню</h2>
+        <div class="products">
+            <div class="product">
+                <img src="images/vanilla.jpg" alt="Ванильное мороженое">
+                <h3>Ванильное</h3>
+                <p>Классическое ванильное мороженое.</p>
+                <span>100 &#8381;</span>
+                <button class="add-to-cart" data-name="Ванильное" data-price="100">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="images/chocolate.jpg" alt="Шоколадное мороженое">
+                <h3>Шоколадное</h3>
+                <p>Богатое шоколадное мороженое.</p>
+                <span>120 &#8381;</span>
+                <button class="add-to-cart" data-name="Шоколадное" data-price="120">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="images/strawberry.jpg" alt="Клубничное мороженое">
+                <h3>Клубничное</h3>
+                <p>Свежая клубника в каждом шарике.</p>
+                <span>110 &#8381;</span>
+                <button class="add-to-cart" data-name="Клубничное" data-price="110">Добавить в корзину</button>
+            </div>
+            <!-- Добавьте больше продуктов по необходимости -->
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="testimonials">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="testimonial">
+            <p>"Лучшее мороженое в городе! Всегда свежее и вкусное."</p>
+            <h4>Анна Иванова</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Прекрасный сервис и большой выбор вкусов. Рекомендую всем!"</p>
+            <h4>Дмитрий Смирнов</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Мороженое просто тает во рту! Отличное место для отдыха."</p>
+            <h4>Екатерина Петрова</h4>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы предлагаем широкий ассортимент свежего и вкусного мороженого, приготовленного из натуральных ингредиентов. Наша цель — подарить вам радость и сладкие моменты каждый день.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Адрес: ул. Примерная, д. 1, Москва</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Email: info@icecreamshop.ru</p>
+        <form action="#" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Магазин Мороженого. Все права защищены.</p>
+    </footer>
+
+    <!-- Корзина -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Ваша корзина</h2>
+            <div id="cart-items">
+                <!-- Товары корзины будут добавляться здесь -->
+            </div>
+            <div id="cart-total">
+                Итого: <span id="total-price">0</span> &#8381;
+            </div>
+            <button id="checkout-button">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
